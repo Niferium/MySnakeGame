@@ -180,7 +180,9 @@ function startGame() {
     const startY = Math.floor(CONFIG.GRID_ROWS / 2);
 
     // Create initial snake segments
-    for (let i = CONFIG.INITIAL_LENGTH - 1; i >= 0; i--) {
+    // BUG FIX: Changed loop to push head at index 0 first, then trailing body segments.
+    // Original code pushed tail at index 0, causing immediate self-collision.
+    for (let i = 0; i < CONFIG.INITIAL_LENGTH; i++) {
         snake.push({ x: startX - i, y: startY });
     }
 
