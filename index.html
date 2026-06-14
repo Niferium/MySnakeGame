@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐍 Arcade Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">🐍 ARCADE SNAKE</h1>
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="label">SCORE</span>
+                    <span id="score" class="value">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">HIGH SCORE</span>
+                    <span id="high-score" class="value highlight">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">SPEED</span>
+                    <span id="speed-display" class="value speed">1x</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Canvas -->
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <!-- Start Screen Overlay -->
+            <div id="start-screen" class="overlay">
+                <div class="overlay-content">
+                    <h2 class="overlay-title">READY?</h2>
+                    <p class="overlay-instructions">
+                        Use <span class="key">↑</span> <span class="key">↓</span> <span class="key">←</span> <span class="key">→</span> or
+                        <span class="key">W</span> <span class="key">A</span> <span class="key">S</span> <span class="key">D</span> to move
+                    </p>
+                    <button id="start-btn" class="btn primary">START GAME</button>
+                </div>
+            </div>
+            <!-- Game Over Overlay -->
+            <div id="game-over-screen" class="overlay hidden">
+                <div class="overlay-content">
+                    <h2 class="overlay-title game-over-text">GAME OVER</h2>
+                    <p class="final-score">Score: <span id="final-score">0</span></p>
+                    <p class="high-score-notice hidden" id="high-score-notice">🎉 New High Score! 🎉</p>
+                    <button id="retry-btn" class="btn primary">RETRY</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Use <strong>Arrow Keys</strong> or <strong>WASD</strong> to control the snake</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
